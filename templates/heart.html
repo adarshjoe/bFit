@@ -1,0 +1,94 @@
+{% extends "reg_index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/heart_post#content">
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+            <table class="table table-bordered" border="1">
+            <tr>
+              <th scope="row">Age</th>
+              <td><label for="textfield"></label>
+              <input type="number" name="textfield" id="textfield" /></td>
+            </tr>
+            <tr>
+              <th scope="row">Gender</th>
+              <td><input type="radio" name="radio2" id="radio" value="1" />Male
+              &emsp;
+               <input type="radio" name="radio2" id="radio2" value="0" />
+              Female</td>
+            </tr>
+            <tr>
+              <th scope="row">Chest Pain Type</th>
+              <td><label for="select"></label>
+                <select name="select" id="select">
+                  <option value="0">No pain</option>
+                  <option value="1">Low</option>
+                  <option value="2">Medium</option>
+                  <option value="3">High</option>
+              </select></td>
+            </tr>
+            <tr>
+              <th scope="row">Resting Blood Pressure</th>
+              <td><label for="textfield2"></label>
+              <input type="text" name="textfield2" id="textfield2" /></td>
+            </tr>
+            <tr>
+              <th scope="row">Serum Cholestoral</th>
+              <td><label for="textfield3"></label>
+              <input type="text" name="textfield3" id="textfield3" /></td>
+            </tr>
+            <tr>
+              <th scope="row">Fasting Blood Sugar</th>
+              <td><label for="textfield4"></label>
+              <select name="textfield4">
+                  <option value="0">Sugar Level <= 120mg/dl</option>
+                  <option value="1">Sugar Level > 120mg/dl</option>
+              </select></td>
+            </tr>
+            <tr>
+              <th scope="row">Resting Electrocardiographic Results </th>
+              <td><label for="select"></label>
+                <select name="textfield5" id="select">
+                  <option value="0">normal</option>
+                  <option value="1">having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV)</option>
+                  <option value="2">showing probable or definite left ventricular hypertrophy by Estes' criteria</option>
+
+              </select></td>
+            </tr>
+            <tr>
+              <th scope="row">Maximum heart rate</th>
+              <td><label for="textfield6"></label>
+              <input type="text" name="textfield6" id="textfield6" /></td>
+            </tr>
+            <tr>
+              <th scope="row">Exercise induced angina</th>
+              <td><label for="textfield7"></label>
+                  <select name="textfield7">
+                  <option value="0">Yes</option>
+                  <option value="1">No</option>
+              </select></td>
+            </tr>
+            </tr>
+            <tr>
+              <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Submit" /></th>
+            </tr>
+          </table>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            {% if msg %}
+                <h2 {% if stat=="not safe" %}style="color: red"{% endif %} {% if stat=="safe" %}style="color: darkgreen"{% endif %}>{{ msg }}</h2>
+                <h3 align="center">Accuracy of result : {{ acc }}</h3>
+            {% endif %}
+        </div>
+    </div>
+</form>
+</body>
+</html>
+{% endblock %}

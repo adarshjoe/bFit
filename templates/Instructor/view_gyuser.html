@@ -1,0 +1,48 @@
+{% extends "Instructor/index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th scope="col">SL NO</th>
+      <th scope="col">NAME</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">PHONE NO</th>
+      <th scope="col">DOB</th>
+      <th scope="col">GENDER</th>
+      <th scope="col">WEIGHT</th>
+      <th scope="col">HEIGHT</th>
+      <th scope="col">BMI</th>
+      <th scope="col">BMI</th>
+      <th scope="col">PHOTOS</th>
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i.name }}</td>
+      <td>&nbsp;{{ i.email_id }}</td>
+      <td>&nbsp;{{ i.phone_no }}</td>
+      <td>&nbsp;{{ i.dob }}</td>
+      <td>&nbsp;{{ i.gender }}</td>
+      <td>&nbsp;{{ i.weight }}</td>
+      <td>&nbsp;{{ i.height }}</td>
+      <td>&nbsp;{{ i.bmi }}</td>
+       <td><a href="{{ i.photo }}"><img src="{{ i.photo }}" alt="" height="100" width="100"/></a> </td>
+      <td><a href="/view_gyupdateuser/{{ i.user_id }}#content" class=" btn btn-primary">update fitness</a> </td>
+        <td><a href="/add_gyattendance/{{ i.user_id }}#content" class=" btn btn-success">Attendance</a> </td>
+     <td><a href="/add_gydiet/{{ i.user_id }}#content" class="btn btn-primary">DIET</a> </td>
+    </tr>
+       {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

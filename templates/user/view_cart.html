@@ -1,0 +1,39 @@
+{% extends "user/index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th scope="col">SLNO</th>
+      <th scope="col">MEDICINE NAME</th>
+      <th scope="col">QUANTITY</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+        {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i.medicine_name }}</td>
+      <td>{{ i.quantity }}&nbsp;</td>
+      <td>{{ i.price }}/-</td>
+      <td><a href="/delete_cart/{{ i.sub_id }}" class="btn btn-danger">Delete</a></td>
+    </tr>
+        {% endfor %}
+    <tr>
+        <td colspan="5"><h3><font><b>Grand Total:</b></font><font color="red">{{ tot }}/-</font></h3></td>
+    </tr>
+    <tr>
+      <td colspan="5" align="center"><a href="/payment_mode/{{ tot }}#content" class="btn btn-dark">BOOK</a></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

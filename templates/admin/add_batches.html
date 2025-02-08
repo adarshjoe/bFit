@@ -1,0 +1,36 @@
+{% extends "admin/index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/add_batch_post">
+  <table class="table table-bordered" style="width: 600px;" align="center" border="1">
+    <tr>
+      <td scope="col">Date Of Join</td>
+      <td scope="col"><input type="date" name="textfield" class="form-control" id="textfield" required /></td>
+    </tr>
+    <tr>
+      <td>Time From</td>
+      <td><input type="time" name="textfield2" id="textfield2"  class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>Time To</td>
+      <td><input type="time" name="textfield3" id="textfield3"  class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>Batch Name</td>
+      <td><input type="text" name="textfield4" id="textfield4"  class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td colspan="2", align="center"><input type="submit" name="button" id="button" value="Add" class="btn btn-success" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

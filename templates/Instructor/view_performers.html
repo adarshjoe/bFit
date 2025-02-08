@@ -1,0 +1,34 @@
+{% extends "instructor/index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th scope="col">Slno</th>
+{#      <th scope="col">Competition Id</th>#}
+      <th scope="col">COMPETITION NAME</th>
+      <th scope="col">USER NAME</th>
+      <th scope="col">PHONE NO</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+       {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i.competition_name }}</td>
+      <td>&nbsp;{{ i.name }}</td>
+      <td>&nbsp;{{ i.phone_no }}</td>
+      <td><a href="/delete_performers/{{ i.performer_id }}"  class="btn btn-danger"  onclick="return confirm('Are you sure?')">Delete</a></td>
+    </tr>
+         {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

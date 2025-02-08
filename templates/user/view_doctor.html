@@ -1,0 +1,43 @@
+{% extends "user/index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th scope="col">SL NO</th>
+      <th scope="col">DOCTOR NAME</th>
+      <th scope="col">EXPERIENCE</th>
+      <th scope="col">QUALIFICATION</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">PHONE NO</th>
+      <th scope="col">DOB</th>
+      <th scope="col">GENDER</th>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+       {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i.doctor_name }}</td>
+      <td>&nbsp;{{ i.experience }}</td>
+      <td>&nbsp;{{ i.qualification }}</td>
+      <td> {{ i.email_id }}</td>
+      <td>&nbsp;{{ i.phone_no }}</td>
+      <td>&nbsp;{{ i.dob }}</td>
+      <td>&nbsp;{{ i.gender }}</td>
+      <td><a href="/view_doctor_schedule/{{ i.doctor_id }}#content" class="btn btn-warning" >Schedule</a></td>
+      <td><a href="/send_review/{{ i.doctor_id }}" class="btn btn-info" >Review</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

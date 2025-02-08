@@ -1,0 +1,35 @@
+{% extends "admin/index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th>SL NO</th>
+      <th>USER NAME</th>
+      <th>COMPETITION NAME</th>
+      <th>DATE</th>
+      <th>STATUS</th>
+      <th>&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{loop.index}}</td>
+      <td>{{ i.name }}</td>
+      <td>&nbsp;{{ i.competition_name }}</td>
+      <td>{{ i.date }}.</td>
+      <td>{{ i.status }}&nbsp;</td>
+      <td><a href="/delete_applicants/{{ i.applicant_id }}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a></td>
+    </tr>
+       {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

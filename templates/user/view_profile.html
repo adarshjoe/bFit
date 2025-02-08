@@ -1,0 +1,63 @@
+{% extends "user/index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+   <table class="table table-bordered">
+  
+ 
+    <tr>
+      <th scope="col">NAME</th>
+        <td>&nbsp;{{ data.name}}</td>
+    </tr>
+   <tr>
+      <th scope="col">EMAIL</th>
+        <td>&nbsp;{{ data.email_id }}</td>
+   </tr>
+   <tr>
+      <th scope="col">PHONE NO</th>
+       <td>&nbsp;{{ data.phone_no}}</td>
+   </tr>
+   <tr>
+
+      <th scope="col">DOB</th>
+        <td>&nbsp;{{ data.dob}}</td>
+
+   </tr>
+   <tr>
+
+      <th scope="col">GENDER</th>
+       <td>&nbsp;{{ data.gender }}</td>
+
+   </tr>
+   <tr>
+      <th scope="col">WEIGHT</th>
+       <td>&nbsp;{{ data.weight }}</td>
+   </tr>
+   <tr>
+      <th scope="col">HEIGHT</th>
+         <td>&nbsp;{{ data.height }}</td>
+   </tr>
+   <tr>
+
+      <th scope="col">BMI</th>
+       <td>&nbsp;{{ data.bmi }}</td>
+
+
+   </tr>
+   <tr>
+       <th scope="col">PHOTOS</th>
+       <td><a href="{{ data.photo }}"><img src="{{ data.photo }}" alt="" height="100" width="100"/></a> </td>
+   </tr>
+
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

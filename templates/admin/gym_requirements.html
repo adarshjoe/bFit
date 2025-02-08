@@ -1,0 +1,32 @@
+{% extends "admin/index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/gym_requirements_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered" style="width: 600px;" align="center" border="1">
+    <tr>
+      <td>Equipment Name</td>
+      <td><input type="text" name="textfield" id="textfield" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>Equipment Details</td>
+      <td><textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control" required></textarea></td>
+    </tr>
+    <tr>
+      <td>Photos</td>
+      <td><input type="file" name="fileField" id="fileField" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td colspan="2", align="center"><input name="button" type="submit" id="button" value="Add" class="btn btn-success"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

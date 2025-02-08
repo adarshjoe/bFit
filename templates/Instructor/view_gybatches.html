@@ -1,0 +1,36 @@
+{% extends "Instructor/index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th width="" scope="col">SL NO</th>
+      <th width="" scope="col">DATE OF JOIN</th>
+      <th width="" scope="col">TIME FROM</th>
+      <th width="" scope="col">TIME TO</th>
+      <th width="" scope="col">BATCH NAME</th>
+      <th width="" scope="col">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i.date_of_join}}</td>
+      <td>&nbsp;{{ i.time_from }}</td>
+      <td>&nbsp;{{ i.time_to }}</td>
+      <td>&nbsp;{{ i.batch_name }}</td>
+      <td><a href="/view_gyuser/{{ i.batch_id }}#content" class="btn btn-primary">View Users</a></td>
+    </tr>
+        {% endfor %}
+
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

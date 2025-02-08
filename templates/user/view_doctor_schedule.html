@@ -1,0 +1,33 @@
+{% extends "user/index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+   <table class="table table-bordered">
+    <tr>
+      <th scope="col">SL NO</th>
+      <th scope="col">DATE</th>
+      <th scope="col">TIME FROM</th>
+      <th scope="col">TIME TO</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+       {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i.date }}</td>
+      <td>{{ i.time_from }}</td>
+      <td>{{ i.time_to }}</td>
+      <td><a href="/book_appointment/{{ i.schedule_id }}" class="btn btn-danger"  onclick="return confirm('Are you sure?')">Book Appointment</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
